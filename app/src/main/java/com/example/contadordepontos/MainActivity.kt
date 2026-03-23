@@ -2,6 +2,7 @@ package com.example.contadordepontos
 
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -25,6 +26,38 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.layout_main)
+    }
+
+    fun adicionarPontos(pontos: Int, time: String) {
+        if(time == "A") {
+            pontuacaoTimeA += pontos
+        } else {
+            pontuacaoTimeB += pontos
+        }
+
+        atualizarPlacar(time)
+    }
+
+    fun atualizarPlacar (time: String) {
+        if(time == "A") {
+            pTimeA.setText(pontuacaoTimeA.toString())
+        } else {
+            pTimeB.setText(pontuacaoTimeB.toString())
+        }
+    }
+
+    fun reiniciarPartida() {
+        pontuacaoTimeA = 0
+        pTimeA.setText(pontuacaoTimeA.toString())
+
+        pontuacaoTimeB = 0
+        pTimeB.setText(pontuacaoTimeB.toString())
+
+        Toast.makeText(
+            this,
+            "Placar Reiniciado",
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }
 
