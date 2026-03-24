@@ -1,14 +1,10 @@
 package com.example.contadordepontos
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -24,8 +20,30 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.layout_main)
+
+        pTimeA = findViewById(R.id.placarTimeA)
+        pTimeB = findViewById(R.id.placarTimeB)
+
+        val tiroLivreTimeA: Button = findViewById(R.id.tiroLivreA)
+        val doisPontosTimeA: Button = findViewById(R.id.doisPontosA)
+        val tresPontosTimeA: Button = findViewById(R.id.tresPontosA)
+
+        val tiroLivreTimeB: Button = findViewById(R.id.tiroLivreB)
+        val doisPontosTimeB: Button = findViewById(R.id.doisPontosB)
+        val tresPontosTimeB : Button = findViewById(R.id.tresPontosB)
+
+        val reiniciar: Button = findViewById(R.id.reiniciarPartida)
+
+        tiroLivreTimeA.setOnClickListener { adicionarPontos(1, "A") }
+        doisPontosTimeA.setOnClickListener { adicionarPontos(2, "A") }
+        tresPontosTimeA.setOnClickListener { adicionarPontos(3, "A") }
+
+        tiroLivreTimeB.setOnClickListener { adicionarPontos(1, "B") }
+        doisPontosTimeB.setOnClickListener { adicionarPontos(2, "B") }
+        tresPontosTimeB.setOnClickListener { adicionarPontos(3, "B") }
+
+        reiniciar.setOnClickListener { reiniciarPartida() }
     }
 
     fun adicionarPontos(pontos: Int, time: String) {
