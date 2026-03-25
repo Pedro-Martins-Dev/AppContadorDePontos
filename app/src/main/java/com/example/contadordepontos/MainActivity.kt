@@ -29,11 +29,31 @@ class MainActivity : ComponentActivity() {
         val doisPontosTimeA: Button = findViewById(R.id.doisPontosA)
         val tresPontosTimeA: Button = findViewById(R.id.tresPontosA)
 
+        tresPontosTimeA.setBackgroundColor(getColor(R.color.white))
+        tresPontosTimeA.setTextColor(getColor(android.R.color.black))
+
+        doisPontosTimeA.setBackgroundColor(getColor(R.color.white))
+        doisPontosTimeA.setTextColor(getColor(android.R.color.black))
+
+        tiroLivreTimeA.setBackgroundColor(getColor(R.color.white))
+        tiroLivreTimeA.setTextColor(getColor(android.R.color.black))
+
         val tiroLivreTimeB: Button = findViewById(R.id.tiroLivreB)
         val doisPontosTimeB: Button = findViewById(R.id.doisPontosB)
         val tresPontosTimeB : Button = findViewById(R.id.tresPontosB)
 
+        tresPontosTimeB.setBackgroundColor(getColor(R.color.white))
+        tresPontosTimeB.setTextColor(getColor(android.R.color.black))
+
+        doisPontosTimeB.setBackgroundColor(getColor(R.color.white))
+        doisPontosTimeB.setTextColor(getColor(android.R.color.black))
+
+        tiroLivreTimeB.setBackgroundColor(getColor(R.color.white))
+        tiroLivreTimeB.setTextColor(getColor(android.R.color.black))
+
         val reiniciar: Button = findViewById(R.id.reiniciarPartida)
+        reiniciar.setBackgroundColor(getColor(R.color.black))
+        reiniciar.setTextColor(getColor(R.color.white))
 
         tiroLivreTimeA.setOnClickListener { adicionarPontos(1, "A") }
         doisPontosTimeA.setOnClickListener { adicionarPontos(2, "A") }
@@ -79,18 +99,4 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ContadorDePontosTheme {
-        Greeting("Android")
-    }
-}
