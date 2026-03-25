@@ -17,15 +17,30 @@
             android:orientation="vertical"
             android:background="#FFCDD2">
 
-            <TextView
-                android:id="@+id/timeA"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="16dp"
-                android:text="Time A"
-                android:textSize="14sp"
-                android:fontFamily="sans-serif"/>
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/timeA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text="Time A"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/removerPontoTimeA"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="4dp"
+                    android:padding="0dp"
+                    android:text="-1" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/placarTimeA"
@@ -72,15 +87,30 @@
             android:orientation="vertical"
             android:background="#BBDEFB">
 
-            <TextView
-                android:id="@+id/timeB"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="16dp"
-                android:text="Time B"
-                android:textSize="14sp"
-                android:fontFamily="sans-serif"/>
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/timeB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:text="Time B"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/removerPontoTimeB"
+                    android:layout_width="48dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="4dp"
+                    android:padding="0dp"
+                    android:text="-1" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/placarTimeB"

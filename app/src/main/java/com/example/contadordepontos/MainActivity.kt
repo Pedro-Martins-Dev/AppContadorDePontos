@@ -51,6 +51,16 @@ class MainActivity : ComponentActivity() {
         tiroLivreTimeB.setBackgroundColor(getColor(R.color.white))
         tiroLivreTimeB.setTextColor(getColor(android.R.color.black))
 
+        val removerPontoTimeA: Button = findViewById(R.id.removerPontoTimeA)
+        removerPontoTimeA.setOnClickListener {
+            removerPonto("A")
+        }
+
+        val removerPontoTimeB: Button = findViewById(R.id.removerPontoTimeB)
+        removerPontoTimeB.setOnClickListener {
+            removerPonto("B")
+        }
+
         val reiniciar: Button = findViewById(R.id.reiniciarPartida)
         reiniciar.setBackgroundColor(getColor(R.color.black))
         reiniciar.setTextColor(getColor(R.color.white))
@@ -73,6 +83,19 @@ class MainActivity : ComponentActivity() {
             pontuacaoTimeB += pontos
         }
 
+        atualizarPlacar(time)
+    }
+
+    fun removerPonto(time: String) {
+        if(time == "A") {
+            if (pontuacaoTimeA > 0) {
+                pontuacaoTimeA -= 1
+            }
+        } else {
+            if (pontuacaoTimeB > 0) {
+                pontuacaoTimeB -= 1
+            }
+        }
         atualizarPlacar(time)
     }
 
