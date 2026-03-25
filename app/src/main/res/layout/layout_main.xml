@@ -3,19 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2A2828"
     tools:context="com.seu.pacote">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/tituloApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/containerDosTimes"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="82dp"
+        android:layout_marginBottom="108dp"
+        android:gravity="center"
+        android:text="Grifória x Corvinal"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="40sp" />
+
+    <LinearLayout
+        android:id="@+id/containerDosTimes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/reiniciarPartida"
+        android:layout_marginBottom="219dp"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="6dp"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="#FFCDD2">
+            android:background="@drawable/fundo_arredondado"
+            android:backgroundTint="#B60202"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -26,10 +46,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:padding="16dp"
-                    android:text="Time A"
-                    android:textSize="14sp" />
+                    android:text="Grifinória"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/removerPontoTimeA"
@@ -37,8 +59,11 @@
                     android:layout_height="40dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_margin="4dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/botao_remover_ponto"
                     android:padding="0dp"
+                    android:textColor="#FFFFFF"
+
                     android:text="-1" />
             </RelativeLayout>
 
@@ -46,17 +71,22 @@
                 android:id="@+id/placarTimeA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:padding="4dp"
+                android:textColor="#FFFFFF"
                 android:text="0"
-                android:textSize="54sp"
-                android:fontFamily="sans-serif"/>
+                android:textSize="54sp" />
 
             <Button
                 android:id="@+id/tresPontosA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:background="@drawable/botoes_acao"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
                 android:text="+3 PONTOS" />
 
             <Button
@@ -64,6 +94,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:background="@drawable/botoes_acao"
+                android:backgroundTint="#8BC34A"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
                 android:text="+2 PONTOS" />
 
             <Button
@@ -71,21 +105,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:background="@drawable/botoes_acao"
+                android:backgroundTint="#CDDC39"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
                 android:text="Tiro Livre" />
         </LinearLayout>
 
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="6dp"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="#BBDEFB">
+            android:background="@drawable/fundo_arredondado"
+            android:backgroundTint="#064B83"
+            android:orientation="vertical">>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -96,10 +136,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:padding="16dp"
-                    android:text="Time B"
-                    android:textSize="14sp" />
+                    android:text="Corvinal"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
                 <Button
                     android:id="@+id/removerPontoTimeB"
@@ -107,8 +149,14 @@
                     android:layout_height="40dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_margin="4dp"
+                    android:layout_margin="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/botao_remover_ponto"
                     android:padding="0dp"
+                    android:textColor="#FFFFFF"
                     android:text="-1" />
             </RelativeLayout>
 
@@ -116,17 +164,22 @@
                 android:id="@+id/placarTimeB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
                 android:gravity="center"
+                android:textColor="#FFFFFF"
                 android:padding="4dp"
                 android:text="0"
-                android:textSize="54sp"
-                android:fontFamily="sans-serif"/>
+                android:textSize="54sp" />
 
             <Button
                 android:id="@+id/tresPontosB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:background="@drawable/botoes_acao"
+                android:backgroundTint="#4CAF50"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
                 android:text="+3 PONTOS" />
 
             <Button
@@ -134,6 +187,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:background="@drawable/botoes_acao"
+                android:backgroundTint="#8BC34A"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
                 android:text="+2 PONTOS" />
 
             <Button
@@ -141,6 +198,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:background="@drawable/botoes_acao"
+                android:backgroundTint="#CDDC39"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
                 android:text="Tiro Livre" />
         </LinearLayout>
 
@@ -148,10 +209,18 @@
 
     <Button
         android:id="@+id/reiniciarPartida"
-        android:layout_width="match_parent"
+        android:layout_width="812dp"
         android:layout_height="wrap_content"
-        android:text="Reiniciar Partida"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="32dp"/>
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="31dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:text="Reiniciar Partida"
+        android:backgroundTint="#00BFA5"
+        android:background="@drawable/botoes_acao"
+        />
 </RelativeLayout>
